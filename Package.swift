@@ -9,7 +9,8 @@ let package = Package(
     products: [
         .library(
             name: "Delta",
-            targets: ["DeltaCore"])
+            targets: ["DeltaCore"]
+        )
     ],
     targets: [
         .target(
