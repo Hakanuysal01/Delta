@@ -7,25 +7,29 @@ let package = Package(
         .iOS(.v14)
     ],
     products: [
-        .library(name: "Delta", targets: [
-            "DeltaCore",
-            "GBADeltaCore",
-            "GBCDeltaCore",
-            "NESDeltaCore",
-            "SNESDeltaCore",
-            "N64DeltaCore",
-            "MelonDSDeltaCore",
-            "GPGXDeltaCore"
-        ])
+        .library(name: "Delta", targets: ["Delta"])
     ],
     targets: [
-        .target(name: "DeltaCore", path: "Cores/DeltaCore"),
-        .target(name: "GBADeltaCore", path: "Cores/GBADeltaCore"),
-        .target(name: "GBCDeltaCore", path: "Cores/GBCDeltaCore"),
-        .target(name: "NESDeltaCore", path: "Cores/NESDeltaCore"),
-        .target(name: "SNESDeltaCore", path: "Cores/SNESDeltaCore"),
-        .target(name: "N64DeltaCore", path: "Cores/N64DeltaCore"),
-        .target(name: "MelonDSDeltaCore", path: "Cores/MelonDSDeltaCore"),
-        .target(name: "GPGXDeltaCore", path: "Cores/GPGXDeltaCore")
+        .target(
+            name: "Delta",
+            path: ".",
+            exclude: [
+                "External",
+                "Pods",
+                "Harmony",
+                "Roxas",
+                "Screenshots",
+                "fastlane"
+            ],
+            sources: [
+                "Cores/GBADeltaCore",
+                "Cores/GBCDeltaCore",
+                "Cores/NESDeltaCore",
+                "Cores/SNESDeltaCore",
+                "Cores/N64DeltaCore",
+                "Cores/MelonDSDeltaCore",
+                "Cores/GPGXDeltaCore"
+            ]
+        )
     ]
 )
