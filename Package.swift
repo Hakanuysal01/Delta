@@ -1,26 +1,20 @@
-
-// swift-tools-version:5.7
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "Delta",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v14)
     ],
     products: [
         .library(
             name: "Delta",
-            targets: ["DeltaCore"]
-        ),
+            targets: ["DeltaCore"])
     ],
     targets: [
         .target(
             name: "DeltaCore",
-            path: "Cores/DeltaCore",
-            exclude: [],
-            resources: [
-                .process("Resources")
-            ]
+            path: "Cores/DeltaCore"
         )
     ]
 )
